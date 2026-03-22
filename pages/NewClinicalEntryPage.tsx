@@ -56,7 +56,9 @@ const NewClinicalEntryPage: React.FC = () => {
 
   const handleRemoveEntry = (index: number) => {
     if (entries.length > 1) {
-      setEntries(entries.filter((_, i) => i !== index));
+      if (window.confirm("Remove this medicine entry?")) {
+        setEntries(entries.filter((_, i) => i !== index));
+      }
     }
   };
 
